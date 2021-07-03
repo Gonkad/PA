@@ -24,39 +24,38 @@ public class Main {
 		dataInicio = dataHoje(); 		
 		verDadosBD();
 		entrada(uti);
-		System.out.print("oi");
-		Rgshorisghoisgj
+OI
 	}
 	
 public static void verDadosBD(){
 	
 	if(GereBD.carregaProperties()){
 
-		boolean bool = leBoolean("Deseja fazer uma nova conexão á base de dados? (s/n): ");
+		boolean bool = leBoolean("Deseja fazer uma nova conexÃ£o Ã¡ base de dados? (s/n): ");
 		
 		if(bool){
 			if(insereDadosBD()){
 				if(GereBD.verTabelasDadosBD()){
-					System.out.println("Conexão á Base de Dados com sucesso!\n\n");
+					System.out.println("ConexÃ£o Ã¡ Base de Dados com sucesso!\n\n");
 				} else {
-					System.out.println("Conexão á Base de Dados com sucesso!\nMas a base de dados não tem todas as tabelas necessárias para correr o programa\n\n");
+					System.out.println("ConexÃ£o Ã¡ Base de Dados com sucesso!\nMas a base de dados nÃ£o tem todas as tabelas necessÃ¡rias para correr o programa\n\n");
 				}
 			} else {
-				System.out.println("\nComo não deseja introduzir novos dados, o programa vai arrancar a com a base de dados anterior!!\n\n");
+				System.out.println("\nComo nÃ£o deseja introduzir novos dados, o programa vai arrancar a com a base de dados anterior!!\n\n");
 			}
 		}
 		
 	} else {		
 		
-		System.out.println("\nNão houve nenhuma ligação a uma base de dados, insira os dados para criar uma nova!!\n\n");
+		System.out.println("\nNÃ£o houve nenhuma ligaÃ§Ã£o a uma base de dados, insira os dados para criar uma nova!!\n\n");
 		
 		if(insereDadosBD()){
 
-			System.out.println("Conexão á base de dados com sucesso!\n\n");
+			System.out.println("ConexÃ£o Ã¡ base de dados com sucesso!\n\n");
 			 
 		} else {
 			
-			System.out.println("Como desejou não introduzir nada. Adeus!!!\n\n");
+			System.out.println("Como desejou nÃ£o introduzir nada. Adeus!!!\n\n");
 			System.exit(0);
 		}
 		
@@ -100,7 +99,7 @@ public static void entrada(GereUtilizadores aUti){
 
 			
 			System.out.println("\n|----------Menu Principal----------|\n"
-					 + "1 - Iniciar Sessão\n"
+					 + "1 - Iniciar SessÃ£o\n"
 					 + "2 - Registar Utilizador\n"
 					 + "3 - Sair");
 
@@ -120,15 +119,15 @@ public static void entrada(GereUtilizadores aUti){
 				teclado.close();
 				dataFim = dataHoje();
 				tempo();
-				System.out.println("\n|----------Informação----------|\n"
+				System.out.println("\n|----------InformaÃ§Ã£o----------|\n"
 						 + "Adeus!! :D");
 				System.exit(0);
 			}
 			}	
 
 		} else {
-			System.out.println("\n|----------Informação----------|\n"
-					 + "Não há nenhum gestor registado, introduz um primeiro\n");
+			System.out.println("\n|----------InformaÃ§Ã£o----------|\n"
+					 + "NÃ£o hÃ¡ nenhum gestor registado, introduz um primeiro\n");
 			registroGestor(aUti);
 		}
 	}while(true);
@@ -148,14 +147,14 @@ public static boolean iniciarSessao(){
 				utinome = guti.devolveNome(login);
 				return true;
 			} else if (guti.verificaEstado(login) == 0){
-				System.out.println("O utilizador que colocou ainda não foi aceite pelo Gestor.\n");
+				System.out.println("O utilizador que colocou ainda nÃ£o foi aceite pelo Gestor.\n");
 				return false;
 			} else {
-				System.out.println("O utilizador que colocou não foi aprovado pelo Gestor.\n");
+				System.out.println("O utilizador que colocou nÃ£o foi aprovado pelo Gestor.\n");
 				return false;
 			}
 		} else {
-			System.out.println("Os dados que colocou não se encontram corretos.\n");
+			System.out.println("Os dados que colocou nÃ£o se encontram corretos.\n");
 
 			boolean bool = leBoolean("Deseja tentar outra vez? (s/n): ");
 			if(!bool){
@@ -194,7 +193,7 @@ public static void menuCliente(){
 					 + "1 - Fazer pedido de Encomenda\n"
 					 + "2 - Listar Encomendas\n"
 					 + "3 - Pesquisar Encomendas\n"
-					 + "4 - Notificações\n"
+					 + "4 - NotificaÃ§Ãµes\n"
 					 + "5 - Listar Produtos\n"
 					 + "6 - Pesquisar Produtos\n"
 					 + "7 - Sair");
@@ -357,7 +356,7 @@ public static void menuFuncionario(){
 					break;
 				}
 				case 6: {
-					gerelog.insereLog("Terminou Sessão", login1);
+					gerelog.insereLog("Terminou SessÃ£o", login1);
 					bool = false;
 				}
 				}
@@ -401,9 +400,9 @@ public static void menuGestor(){
 	System.out.println("\n|----------Menu Gestor----------|\n"
 			 + "1 - Utilizadores\n"
 			 + "2 - Encomendas\n"
-			 + "3 - Notificações\n"
+			 + "3 - NotificaÃ§Ãµes\n"
 			 + "4 - Log\n"
-			 + "5 - Informação\n"
+			 + "5 - InformaÃ§Ã£o\n"
 			 + "6 - Sair");
 	
 	switch(LerOpcao(6)){
@@ -493,18 +492,18 @@ private static void pedeEncomenda(){
    boolean boole = false;
    if(prod.exists()){
 	do{	
-	    String identificador = leString("Qual a designacao do produto que deseja adicionar á encomenda?\n");
+	    String identificador = leString("Qual a designacao do produto que deseja adicionar Ã¡ encomenda?\n");
 		if((prod.getPID(identificador) == 0)){
-			System.out.print("Não existe nenhum produto com essa designacao.\n");
+			System.out.print("NÃ£o existe nenhum produto com essa designacao.\n");
 		}else{
 			int id_prod = prod.getPID(identificador);
-			boolean bool = leBoolean("Deseja adicionar este produto á encomenda?(s/n)");
+			boolean bool = leBoolean("Deseja adicionar este produto Ã¡ encomenda?(s/n)");
 			if(bool){
 				produtosarray[i] = id_prod;
 				i++;
-				int quantidade =  leInt("Que quantidade do produto selecionado deseja adicionar á encomenda?");
+				int quantidade =  leInt("Que quantidade do produto selecionado deseja adicionar Ã¡ encomenda?");
 				if(prod.verStock(quantidade, id_prod)){
-				boolean bool2 =  leBoolean("Deseja adicionar mais algum produto á encomenda?(s/n).");
+				boolean bool2 =  leBoolean("Deseja adicionar mais algum produto Ã¡ encomenda?(s/n).");
 				if(bool2){
 				
 				}else{
@@ -521,17 +520,17 @@ private static void pedeEncomenda(){
 				enc.adicionaProdutoEncomenda(Id_E, id2);
 			    }
 			    }
-			    System.out.println("Produtos adicionados á encomenda.");
+			    System.out.println("Produtos adicionados Ã¡ encomenda.");
 			    boole = true;
 				}
 				}else{
-				System.out.println("Não há stock suficiente para adicionar o mesmo á encomenda.");
+				System.out.println("NÃ£o hÃ¡ stock suficiente para adicionar o mesmo Ã¡ encomenda.");
 				}
 			}
 		}
 	}while(boole = true);
 	}else{
-		System.out.println("Não é possivel fazer um pedido de encomenda pois ainda não produtos registados no sistema.");
+		System.out.println("NÃ£o Ã© possivel fazer um pedido de encomenda pois ainda nÃ£o produtos registados no sistema.");
 	}
    }
 
@@ -539,7 +538,7 @@ public static void menuGestorNotificacoes(){//por mudar
 	
 	System.out.println("\n|----------Notificacoes Gestor----------|\n");
 	System.out.println(new GereNotificacoes().GestorNotificacoes());
-	gerelog.insereLog("Verificou as suas notificações", login1);
+	gerelog.insereLog("Verificou as suas notificaÃ§Ãµes", login1);
 }
 
 public static void menuGestorUtilizadores(){
@@ -669,7 +668,7 @@ public static void aprovarPedidos(){
 			if(uti.verificaLogin(string1)){
 				break;					
 			} else {
-				string1 = leString("\nEste login não está registado!\nIntroduza um login que esteja registado: ");
+				string1 = leString("\nEste login nÃ£o estÃ¡ registado!\nIntroduza um login que esteja registado: ");
 			}
 		} while (true);
 		gerelog.insereLog("Aprovou o login: " + string1, login1);
@@ -682,7 +681,7 @@ public static void aprovarPedidos(){
 			if(uti.verificaLogin(string1)){
 				break;					
 			} else {
-				string1 = leString("\nEste login não está registado\nIntroduza um login que esteja registado: ");
+				string1 = leString("\nEste login nÃ£o estÃ¡ registado\nIntroduza um login que esteja registado: ");
 			}
 		} while (true);
 		gerelog.insereLog("Reprovou o login: " + string1, login1);
@@ -883,7 +882,7 @@ public static boolean pesquisaUtilizadores(){
 			if(uti.verificaLogin(string1)){
 				break;				
 			} else {
-				string1 = leString("\nLogin não registado\nIntroduza um que esteja registado: ");
+				string1 = leString("\nLogin nÃ£o registado\nIntroduza um que esteja registado: ");
 			}
 		}while (true);
 		
@@ -973,7 +972,7 @@ public static void menuAceitaEncomendas(){
 			if(enc.verIdEncomenda(idencomenda)){
 				break;
 			} else {
-				System.out.println("O id encomenda "+ idencomenda +" não existe no nosso sistema tente novamente");
+				System.out.println("O id encomenda "+ idencomenda +" nÃ£o existe no nosso sistema tente novamente");
 				idencomenda = leString("Introduza o identificador da encomenda: ");
 			}
 			
@@ -1006,7 +1005,7 @@ public static void menuListarEncomendas(){
 		} else {
 			ordenacao = "desc";
 		}
-		boolean bool2 = leBoolean("Pretende listar ordenando por data de criação(s) ou pelo identificador(n)? (s/n): ");
+		boolean bool2 = leBoolean("Pretende listar ordenando por data de criaÃ§Ã£o(s) ou pelo identificador(n)? (s/n): ");
 		if (bool2){
 			string = "e_datacriacao " + ordenacao;
 		} else {
@@ -1031,7 +1030,7 @@ public static void menuPesquisarEncomendas(){
 	if(string.equals("Funcionario") || string.equals("Cliente")){
 		
 	System.out.println("\n|----------Menu Pesquisa Encomendas----------|\n"
-			 + "1 - Por Data de Criação\n"
+			 + "1 - Por Data de CriaÃ§Ã£o\n"
 			 + "2 - Por Identificador\n"
 			 + "3 - Por Estado\n"
 			 + "4 - Sair");
@@ -1065,7 +1064,7 @@ public static void menuPesquisarEncomendas(){
 	}
 	}else{
 		System.out.println("\n|----------Menu Pesquisa Encomendas----------|\n"
-				 + "1 - Por Data de Criação\n"
+				 + "1 - Por Data de CriaÃ§Ã£o\n"
 				 + "2 - Por Identificador\n"
 				 + "3 - Por Estado\n"
 				 + "4 - Por Cliente\n"
@@ -1123,19 +1122,19 @@ public static void menuPesquisarEncomendas(){
 public static void notificacoesCliente(){
 	
 	System.out.println("\n|----------Notificacoes Cliente----------|\n");
-	gerelog.insereLog("Verificou as suas notificações", login1);
+	gerelog.insereLog("Verificou as suas notificaÃ§Ãµes", login1);
 }
 
 public static void notificacoesFuncionarioArmazenista(){
 	
 	System.out.println("\n|----------Notificacoes Funcionario Armazenista----------|\n");
-	gerelog.insereLog("Verificou as suas notificações", login1);
+	gerelog.insereLog("Verificou as suas notificaÃ§Ãµes", login1);
 }
 
 public static void notificacoesFuncionarioEstafeta(){
 	
 	System.out.println("\n|----------Notificacoes Funcionario Estafeta----------|\n");
-	gerelog.insereLog("Verificou as suas notificações", login1);
+	gerelog.insereLog("Verificou as suas notificaÃ§Ãµes", login1);
 }
 
 
@@ -1210,14 +1209,14 @@ private static void registroFuncionario(GereUtilizadores aUti){
 	do {
 		if(aUti.verificaEmail(email)){
 			
-			System.out.println("Este email já está registado.\n");
+			System.out.println("Este email jÃ¡ estÃ¡ registado.\n");
 			email = leString("Introduza o email: ");
 		
 		}else{
 			if(verificaEmail(email)){
 				break;
 			}else{
-				System.out.println("O email tem de seguir o formato padrão(xxxxx@yyyyyy.zzz).\n");
+				System.out.println("O email tem de seguir o formato padrÃ£o(xxxxx@yyyyyy.zzz).\n");
 				email = leString("Introduza o email: ");
 			}
 		}
@@ -1226,7 +1225,7 @@ private static void registroFuncionario(GereUtilizadores aUti){
 	String login = leString("Introduza o login: ");
 	do {
 		if(aUti.verificaLogin(login)){
-			System.out.println("Já existe este login.\n");
+			System.out.println("JÃ¡ existe este login.\n");
 			login = leString("Introduza o login: ");
 		}else{
 			break;
@@ -1246,7 +1245,7 @@ private static void registroFuncionario(GereUtilizadores aUti){
 	do {
 		if(aUti.verificaContribuinte(numContr, "Funcionario")){
 			
-			System.out.println("Num. Contribuinte já existe\n");
+			System.out.println("Num. Contribuinte jÃ¡ existe\n");
 			numContr = leInt("Introduza o num. Contribuinte: ");
 		}else{
 			break;
@@ -1263,7 +1262,7 @@ private static void registroFuncionario(GereUtilizadores aUti){
 	} while (true);
 	
 	String morada = leString("Introduza a morada: ");
-	boolean especial = leBoolean("Introduza a especialização do funcionário(s/y - Armazenista n - Estafeta): ");
+	boolean especial = leBoolean("Introduza a especializaÃ§Ã£o do funcionÃ¡rio(s/y - Armazenista n - Estafeta): ");
 	funcionario = new Funcionarios(nome, login, pass, email, "Funcionario", numContr, numTele, morada, especial);
 	aUti.insereUtilizador(funcionario, null, null);
 	
@@ -1277,14 +1276,14 @@ private static void registroCliente(GereUtilizadores aUti){
 	do {
 		if(aUti.verificaEmail(email)){
 			
-			System.out.println("Este email já está registado.\n");
+			System.out.println("Este email jÃ¡ estÃ¡ registado.\n");
 			email = leString("Introduza o email: ");
 		
 		} else {
 			if(verificaEmail(email)){
 				break;
 			}else{
-				System.out.println("O email tem de seguir o formato padrão(xxxxx@yyyyyy.zzz).\n");
+				System.out.println("O email tem de seguir o formato padrÃ£o(xxxxx@yyyyyy.zzz).\n");
 				email = leString("Introduza o email: ");
 			}
 		}
@@ -1292,7 +1291,7 @@ private static void registroCliente(GereUtilizadores aUti){
 	String login = leString("Introduza o login: ");
 	do {
 		if(aUti.verificaLogin(login)){
-			System.out.println("Já existe este login.\n");
+			System.out.println("JÃ¡ existe este login.\n");
 			login = leString("Introduza o login: ");
 		}else{
 			break;
@@ -1312,7 +1311,7 @@ private static void registroCliente(GereUtilizadores aUti){
 	do {
 		if(aUti.verificaContribuinte(numContr, "Cliente")){
 			
-			System.out.println("Num. Contribuinte já existe\n");
+			System.out.println("Num. Contribuinte jÃ¡ existe\n");
 			numContr = leInt("Introduza o num. Contribuinte: ");
 		}else{
 			break;
@@ -1340,14 +1339,14 @@ private static void registroGestor(GereUtilizadores aUti){
 	do {
 		if(aUti.verificaEmail(email)){
 			
-			System.out.println("Este email já está registado.\n");
+			System.out.println("Este email jÃ¡ estÃ¡ registado.\n");
 			email = leString("Introduza o email: ");
 		
 		} else {
 			if(verificaEmail(email)){
 				break;
 			}else{
-				System.out.println("O email tem de seguir o formato padrão(xxxxx@yyyyyy.zzz).\n");
+				System.out.println("O email tem de seguir o formato padrÃ£o(xxxxx@yyyyyy.zzz).\n");
 				email = leString("Introduza o email: ");
 			}
 		}
@@ -1356,7 +1355,7 @@ private static void registroGestor(GereUtilizadores aUti){
 	String login = leString("Introduza o login: ");
 	do {
 		if(aUti.verificaLogin(login)){
-			System.out.println("Já existe este login.\n");
+			System.out.println("JÃ¡ existe este login.\n");
 			login = leString("Introduza o login: ");
 		}else{
 			break;
@@ -1382,7 +1381,7 @@ private static String leString(String aMsg){
 		System.out.print(aMsg);
 		str = teclado.nextLine();
 		if(str.equals("")){
-			System.out.println("Não é permitido a inserção de valores nulos. ");
+			System.out.println("NÃ£o Ã© permitido a inserÃ§Ã£o de valores nulos. ");
 		} else {
 			break;
 		}
@@ -1421,13 +1420,13 @@ private static void insereProduto(){
 
 public static int LerOpcao(int aMenu){
 	
-	int opcao = leInt("\n\nOpção: ");
+	int opcao = leInt("\n\nOpÃ§Ã£o: ");
 
 	do {
 		if (opcao > 0 && opcao <= aMenu) {
 			break;
 		} else {
-			opcao = leInt("Deverá apenas inserir números de 1 a " + aMenu + " por favor. \nOpção: ");
+			opcao = leInt("DeverÃ¡ apenas inserir nÃºmeros de 1 a " + aMenu + " por favor. \nOpÃ§Ã£o: ");
 		}
 
 	} while (true);
@@ -1489,7 +1488,7 @@ private static float leFloat(String aMsg){
 
 		} catch (NumberFormatException nfe) {
 
-			System.out.println("Introduza apenas números.");
+			System.out.println("Introduza apenas nÃºmeros.");
 			//nfe.printStackTrace();
 		}
 
@@ -1523,16 +1522,16 @@ private static void tempo(){
 	
 	String [] array = new String [8];
 	array [1] = "Segunda-Feira";
-	array [2] = "Terça-Feira";
+	array [2] = "TerÃ§a-Feira";
 	array [3] = "Quarta-Feira";
 	array [4] = "Quinta-Feira";
 	array [5] = "Sexta-Feira";
-	array [6] = "Sábado";
+	array [6] = "SÃ¡bado";
 	array [7] = "Domingo";
 	
-	System.out.println("\n\nInício do processo: " + array[Integer.parseInt(dataInicio.substring(0,1))] + "; " + dataInicio.substring(2, dataFim.length()-5));
+	System.out.println("\n\nInÃ­cio do processo: " + array[Integer.parseInt(dataInicio.substring(0,1))] + "; " + dataInicio.substring(2, dataFim.length()-5));
 	System.out.println("Fim do processo:    " + array[Integer.parseInt(dataFim.substring(0,1))] + "; " + dataFim.substring(2, dataFim.length()-5));
-	System.out.println("Tempo de execução:  " + diferenca() + " Milisegundos (" + calculaMiliis() + ")\n\n");
+	System.out.println("Tempo de execuÃ§Ã£o:  " + diferenca() + " Milisegundos (" + calculaMiliis() + ")\n\n");
 }
 
 private static String dataHoje(){
