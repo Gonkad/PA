@@ -24,7 +24,7 @@ public class Main {
 		dataInicio = dataHoje(); 		
 		verDadosBD();
 		entrada(uti);
-		
+		System.out.println("Putas e vinho verde");
 	}
 	
 public static void verDadosBD(){
