@@ -24,7 +24,7 @@ public class Main {
 		dataInicio = dataHoje(); 		
 		verDadosBD();
 		entrada(uti);
-		
+		System.out.print("oi");
 	}
 	
 public static void verDadosBD(){
