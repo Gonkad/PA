@@ -25,6 +25,7 @@ public class Main {
 		verDadosBD();
 		entrada(uti);
 		System.out.print("oi");
+		Rgshorisghoisgj
 	}
 	
 public static void verDadosBD(){
